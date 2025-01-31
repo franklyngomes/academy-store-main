@@ -16,9 +16,9 @@ export interface IregisterProps {
     status: number
 }
 export interface loginProps extends IloginProps {
-    user: IloginProps
+    user: loginProps
 }
 
 export interface registerProps extends IregisterProps {
-    user: IregisterProps
+    user: registerProps
 }

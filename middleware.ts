@@ -11,6 +11,8 @@ export const middleware = (request: any) => {
 }
 export const config ={
     matcher: [
-        "/cms/create"
+        "/cms/create",
+        "/cms/list",
+        "/cms/profile"
     ]
 }

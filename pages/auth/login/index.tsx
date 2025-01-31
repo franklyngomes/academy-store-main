@@ -12,6 +12,8 @@ import FormControl from "@mui/material/FormControl";
 import FilledInput from "@mui/material/FilledInput";
 import { loginProps } from "@/interface/auth.interface";
 import { loginMutation } from "@/customHooks/query/auth.query.hooks";
+import Link from "next/link";
+import toast from "react-hot-toast";
 
 
 const Login: FC<loginProps> = ({}) => {
@@ -41,7 +43,7 @@ const Login: FC<loginProps> = ({}) => {
     mutate(formData, {
     });
     console.log(formData);
-
+    toast.success("Logged in successfully")
   };
   return (
     <>
@@ -133,12 +135,12 @@ const Login: FC<loginProps> = ({}) => {
             type="submit"
             disabled={isPending}
           >
-           {isPending?  "Loading..." : "Sign in"}
+           Sign in
           </Button>
         </form>
       </Box>
       <h6 style={{ marginTop: "30px", color: "#002E6E", textAlign: "center", fontSize: "medium" }}>
-        Not a member ? Sign up
+        Not a member ? <Link href='/auth/register' style={{textDecoration: "none", color: "#002E6E"}}>Sign up</Link>
       </h6>
     </>
   );
